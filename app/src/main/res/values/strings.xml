@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Art Space</string>
+
+    <!-- Naruto Anime Information -->
+    <string name="naruto_title">Naruto</string>
+    <string name="naruto_airing_time">October 3, 2002 –March 23, 2017 </string>
+    <string name="naruto_studio">Studio Pierrot</string>
+
+    <!-- Attack on Titan Anime Information -->
+    <string name="attack_on_titan_title">Attack on Titan</string>
+    <string name="attack_on_titan_airing_time">April 7, 2013 – March 28, 2021</string>
+    <string name="attack_on_titan_studio">Wit Studio, MAPPA </string>
+
+    <!-- Parasyte -the maxim- Anime Information -->
+    <string name="parasyte_title">Parasyte -the maxim-</string>
+    <string name="parasyte_airing_time">October 9, 2014 – March 26, 2015</string>
+    <string name="parasyte_studio">Madhouse</string>
+
+    <!-- Death Note Anime Information -->
+    <string name="death_note_title">Death Note</string>
+    <string name="death_note_airing_time">October 4, 2006 – June 27, 2007</string>
+    <string name="death_note_studio">Madhouse</string>
+
+    <!-- Code Geass Anime Information -->
+    <string name="code_geass_title">Code Geass</string>
+    <string name="code_geass_airing_time">October 5, 2006 – September 28, 2008 </string>
+    <string name="code_geass_studio">Sunrise</string>
 </resources>
