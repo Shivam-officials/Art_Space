@@ -1,5 +1,6 @@
 package com.example.artspace
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,10 +11,11 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.CardColors
+import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
@@ -21,7 +23,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -30,11 +31,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.artspace.ui.theme.ArtSpaceTheme
@@ -59,35 +57,55 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun AnimeApp() {
 
+
+    val animeImage by remember { mutableStateOf(R.drawable.kira_death_note_2006_2007)}
+
+    val animeTitle by remember { mutableStateOf(R.string.death_note_title) }
+    val animeStudio by remember { mutableStateOf(R.string.death_note_studio) }
+    val animeAirTime by remember { mutableStateOf(R.string.death_note_airing_time) }
+
     Column(
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally, content = function()
-    )
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+
+        ImageCard(animeImage)
+
+        Spacer(modifier = Modifier.height(250.dp))
+
+        AnimeDescreptor(animeTitle, animeStudio, animeAirTime)
+
+        Spacer(modifier = Modifier.height(15.dp))
+        //controller
+        AnimeController()
+    }
 
 
 }
 
-@Composable
-private fun function(): @Composable() (ColumnScope.() -> Unit) =
-    {
 
-        val animeImage by remember {
-            mutableStateOf(R.drawable.kira_death_note_2006_2007)
+
+@Composable
+private fun AnimeController() {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.Absolute.SpaceAround
+    ) {
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier.width(120.dp)
+        ) {
+            Text(text = "Previous")
         }
 
-        val animeTitle by remember { mutableStateOf(R.string.death_note_title) }
-        val animeStudio by remember { mutableStateOf(R.string.death_note_studio) }
-        val animeAirTime by remember { mutableStateOf(R.string.death_note_airing_time) }
-
-        ImageCard(animeImage)
-
-        Spacer(modifier = Modifier.height(30.dp))
-
-        AnimeDescreptor(animeTitle, animeStudio, animeAirTime)
-
-
-
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier.width(120.dp)
+        ) {
+            Text(text = "Next")
+        }
     }
+}
 
 @Composable
 private fun AnimeDescreptor(animeTitle: Int, animeStudio: Int, animeAirTime: Int) {
