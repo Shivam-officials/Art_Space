@@ -17,8 +17,8 @@ Art Space is optimized for both mobile and tablet devices, providing a seamless 
 
 <img src = "Screenshots/Screenshot_20231215_214612.png" />
 <p align = "center">
- <img src = "Screenshots/Screenshot_20231215_214707.png" width = "350"/> 
-<img src = "Screenshots/Screenshot_20231216_112838.png" width = "350"/>
+ <img src = "Screenshots/Screenshot_20231215_214707.png" width = "300"/> 
+<img src = "Screenshots/Screenshot_20231216_112838.png" width = "300"/>
 </p>
 
 
@@ -44,8 +44,5 @@ Contributions to enhance the app's features, UI, or performance are encouraged! 
 
 ## Credits
 
-This app is part of the Learn by Doing initiative and was created under the guidance of XYZ.
+This app is part of the Learn by Doing initiative and was created under the guidance of self-learning.
 
-## License
-
-Art Space project is licensed under the [MIT License](LICENSE).
