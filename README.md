@@ -17,8 +17,8 @@ Art Space is optimized for both mobile and tablet devices, providing a seamless 
 
 <img src = "Screenshots/Screenshot_20231215_214612.png" />
 <p align = "center">
- <img src = "Screenshots/Screenshot_20231215_214707.png" width = "400"/> 
-<img src = "Screenshots/Screenshot_20231216_112838.png" width = "400"/>
+ <img src = "Screenshots/Screenshot_20231215_214707.png" width = "350"/> 
+<img src = "Screenshots/Screenshot_20231216_112838.png" width = "350"/>
 </p>
 
 
