@@ -3,7 +3,6 @@ package com.example.artspace
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,18 +20,15 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedCard
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -63,13 +59,13 @@ class MainActivity : ComponentActivity() {
     fun AnimeApp() {
 
 
-        var animeImage by remember { mutableStateOf(R.drawable.kira_death_note_2006_2007) }
+        var animeImage by remember { mutableIntStateOf(R.drawable.kira_death_note_2006_2007) }
 
-        var animeTitle by remember { mutableStateOf(R.string.death_note_title) }
-        var animeStudio by remember { mutableStateOf(R.string.death_note_studio) }
-        var animeAirTime by remember { mutableStateOf(R.string.death_note_airing_time) }
+        var animeTitle by remember { mutableIntStateOf(R.string.death_note_title) }
+        var animeStudio by remember { mutableIntStateOf(R.string.death_note_studio) }
+        var animeAirTime by remember { mutableIntStateOf(R.string.death_note_airing_time) }
 
-        var step by remember { mutableStateOf(1) }
+        var step by remember { mutableIntStateOf(1) }
 
         when (step) {
             1 -> {
@@ -119,9 +115,11 @@ class MainActivity : ComponentActivity() {
 
         Spacer(modifier = Modifier.height(200.dp))
 
+
+
             AnimeDescriptor(animeTitle, animeStudio, animeAirTime)
 
-            Spacer(modifier = Modifier.height(25.dp))
+//            Spacer(modifier = Modifier.height(25.dp))
             //controller
             AnimeController(
                 previous = {
@@ -136,32 +134,29 @@ class MainActivity : ComponentActivity() {
                         }
                     }
 
-                },
-                next = {
+                }
+            ) {
 
-                    when (step) {
-                        5 -> {
-                            step = 1
-                        }
-
-                        else -> step++
+                when (step) {
+                    5 -> {
+                        step = 1
                     }
 
-                },
-                modifier = Modifier.weight(0.2f)
-            )
+                    else -> step++
+                }
+
+            }
         }
 
 
     }
 
-
+// TODO: create the testing (UI[Instrument] and Logic[Unit]) code for app
     @Composable
     private fun AnimeController(
-        previous: () -> Unit,
-        next: () -> Unit,
-        modifier: Modifier
-    ) {
+    previous: () -> Unit,
+    next: () -> Unit
+) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Absolute.SpaceAround
@@ -186,15 +181,19 @@ class MainActivity : ComponentActivity() {
     @Composable
     private fun AnimeDescriptor(animeTitle: Int, animeStudio: Int, animeAirTime: Int) {
         Card(
-            colors = CardDefaults.cardColors()
+            colors = CardDefaults.cardColors(),
+            modifier = Modifier.padding(20.dp)
         ) {
             Column(
                 modifier = Modifier.padding(10.dp)
             ) {
 
                 //anime Name
+
                 Text(
                     text = stringResource(id = animeTitle),
+//                    modifier = Modifier.fillMaxWidth(),
+                    fontSize = 40.sp,
                     style = TextStyle.Default.copy(
                         fontWeight = FontWeight.Medium,
                         fontSize = 20.sp

@@ -2,6 +2,9 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="ArtSpaceUiTest">
+        <State />
+      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
@@ -15,8 +18,11 @@
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2023-12-16T05:56:52.512744200Z" />
+          <timeTargetWasSelectedWithDropDown value="2023-12-30T11:43:56.054971900Z" />
         </State>
+      </entry>
+      <entry key="nextButton()">
+        <State />
       </entry>
     </value>
   </component>
